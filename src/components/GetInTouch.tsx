@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaUser, FaMobileAlt, FaRegCommentDots } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaUser,
+  FaMobileAlt,
+  FaRegCommentDots,
+} from "react-icons/fa";
 import { useState } from "react";
 import { Raleway, Roboto } from "next/font/google";
 
@@ -12,7 +18,7 @@ const raleway = Raleway({
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // you can adjust weights
+  weight: ["400", "500", "700"],
 });
 
 export default function GetInTouch() {
@@ -28,7 +34,7 @@ export default function GetInTouch() {
 
   // Replace with your Google Apps Script Web App URL
   const SCRIPT_URL: string =
-    "https://script.google.com/macros/s/AKfycbyWkLxUxX65cqh79_nSbV0By_COfPEZ7xX-SeenpXhdrP4xPYe02_uQ00AhL_9zvm82Cg/exec";
+    "https://script.google.com/macros/s/AKfycbwiNm1C4Lw0bYM11vrNkpPNn2QwmPkXVABAjx1c28QUlmK8J2L30vv1Uc1Sj710EECw/exec";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,37 +46,39 @@ export default function GetInTouch() {
     }));
   };
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setLoading(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
 
-  try {
-    const response = await fetch(SCRIPT_URL, {
-      redirect: "follow",
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      },
-    });
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        redirect: "follow",
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+      });
 
-    const resultText = await response.text();
-    const result = JSON.parse(resultText);
+      const resultText = await response.text();
+      const result = JSON.parse(resultText);
 
-    if (response.ok && result.status === "success") {
-      setSuccess("Message sent successfully ✅");
-    } else {
-      console.error("Error submitting form:", result.message || response.statusText);
+      if (response.ok && result.status === "success") {
+        setSuccess("Message sent successfully ✅");
+      } else {
+        console.error(
+          "Error submitting form:",
+          result.message || response.statusText
+        );
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      // ✅ Always clear form after submission
+      setFormData({ name: "", email: "", mobile: "", message: "" });
+      setLoading(false);
     }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-  } finally {
-    // ✅ Always clear form after submission
-    setFormData({ name: "", email: "", mobile: "", message: "" });
-    setLoading(false);
-  }
-};
-
+  };
 
   return (
     <section
@@ -107,8 +115,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Get in touch with us today and discover how we can help your business
-            grow and succeed. We can&apos;t wait to hear from you!
+            Get in touch with us today and discover how we can help your
+            business grow and succeed. We can&apos;t wait to hear from you!
           </motion.p>
 
           <div className="grid sm:grid-cols-2 gap-6">
@@ -189,7 +197,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 required
               />
             </div>
-      <div className="relative">
+            <div className="relative">
               <FaMobileAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="tel"

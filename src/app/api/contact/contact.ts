@@ -6,17 +6,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { name, email, mobile, message } = req.body;
+    const { name, email, mobile, message } = req.body; 
 
-    // ✅ Replace this with your Google Apps Script Web App URL
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbypXa_Gmlts1bpHc6GhDZss3Uiwn1FYTVZ93dK5Ev0Ce8tOUrONENf-EW3IPoVr2itd/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiNm1C4Lw0bYM11vrNkpPNn2QwmPkXVABAjx1c28QUlmK8J2L30vv1Uc1Sj710EECw/exec";
 
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",  // send JSON
+        "Content-Type": "application/json",  
       },
-      body: JSON.stringify({ name, email, mobile, message }),
+      body: JSON.stringify({ name, email, mobile, message }), 
     });
 
     if (!response.ok) {

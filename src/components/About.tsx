@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
-import { Zap, Code, Globe } from "lucide-react";
+import { Zap, Code, Globe } from "lucide-react"; // Keeping icons for structure
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -81,19 +81,22 @@ export default function About() {
             variants={textVariants}
             className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6"
           >
-            **{companyName}** is a cutting-edge, new age technology solutions
-            company that specialises in delivering robust and scalable solutions
-            to meet the evolving needs of modern businesses.
+            **{companyName}** is the dedicated technology partner for the{" "}
+            **Network Marketing and Direct Selling Industry**. We specialize in
+            creating **precision-engineered MLM software** that transforms
+            complex compensation plans into seamless, scalable global
+            operations.
           </motion.p>
 
           <motion.p
             variants={textVariants}
             className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6"
           >
-            Our team brings over **20 years of collective experience** across
-            key sectors including **Banking, Insurance, Logistics, and Health**,
-            with a strong specialized focus on Banking and Financial Technology
-            (FinTech).
+            Our expertise is rooted in over **a decade of experience** building
+            financial-grade, secure, and highly reliable platforms designed to
+            handle millions of distributors and **guarantee 100% commission
+            accuracy**. We focus entirely on the unique needs of the MLM
+            business model.
           </motion.p>
 
           <motion.div
@@ -101,12 +104,12 @@ export default function About() {
             className="p-4 border border-blue-600/50 bg-slate-800/60 rounded-lg"
           >
             <p className="text-sm font-bold text-blue-400 mb-2 flex items-center">
-              <Code className="w-4 h-4 mr-2" /> CORE EXPERTISE
+              <Zap className="w-4 h-4 mr-2" /> CORE EXPERTISE
             </p>
             <p className="text-xs text-gray-400">
-              Oracle APEX, OCI, Microservices, Kubernetes, AWS, Event Streaming,
-              DevOps, Observability, Payments & Collections, and Loan Management
-              Systems (LMS).
+              Custom Compensation Engines (Binary, Matrix, Hybrid), Global
+              E-Wallet Integration, Distributor Relationship Management (DRM),
+              Scalable Cloud Architecture, and Real-Time Performance Analytics.
             </p>
           </motion.div>
         </div>
@@ -127,7 +130,7 @@ export default function About() {
           >
             <Image
               src="/aboutus.png"
-              alt="Team of Teknoro Software Solutions Private Limited working on digital innovation"
+              alt="Team of Teknoro Software Solutions Private Limited working on MLM software architecture"
               width={500}
               height={500}
               priority

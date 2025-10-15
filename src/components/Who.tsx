@@ -53,25 +53,27 @@ export default function WhoWeAreSection() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { amount: 0.2, once: true });
 
+  // --- MLM-FOCUSED CONTENT ---
   const bulletPoints = [
     {
-      text: "20+ Years Legacy",
-      sub: "A consistent partner for sustainable growth and resilience.",
+      text: "Flawless Commission Logic",
+      sub: "Handling all Matrix, Binary, Unilevel, and Hybrid plan calculations with 100% accuracy.",
     },
     {
-      text: "Deep Sector Expertise",
-      sub: "Proven solutions across Banking, Healthcare, and Logistics.",
+      text: "Global Scalability & Security",
+      sub: "Infrastructure designed for millions of distributors and iron-clad financial data protection.",
     },
     {
-      text: "Global Standards",
-      sub: "Adhering to international standards while solving unique business challenges.",
+      text: "Custom Distributor Portals",
+      sub: "Providing personalized dashboards, training tools, and e-commerce integration for growth.",
     },
   ];
 
   const mission =
-    "To partner with forward-thinking organizations, applying cutting-edge digital and cloud technologies to transform their processes, enhance productivity, and secure their digital future.";
+    "To be the **trusted technological backbone** for network marketing companies, providing intuitive, precise, and infinitely scalable software solutions that drive distributor success and organizational integrity.";
   const vision =
-    "To be the global catalyst for digital transformation, shaping the next generation of business by delivering world-changing, intelligent technology experiences.";
+    "To redefine the global MLM landscape by setting a new standard for software precision, user experience, and ethical transparency, making every commission accurate and every growth metric traceable.";
+  // ---------------------------
 
   return (
     <section
@@ -88,16 +90,17 @@ export default function WhoWeAreSection() {
           className="grid md:grid-cols-2 gap-12 sm:gap-16 relative z-10 py-16 sm:py-24"
         >
           <div className="space-y-10">
+            {/* Updated Heading for MLM Focus */}
             <h2 className="text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
-              Our <span className="text-blue-400">DNA</span> of Innovation
+              Our <span className="text-blue-500">MLM</span> Blueprint
             </h2>
             <h3 className="text-2xl font-semibold text-gray-700">
               <span
-                className={`${merriweather.className} italic font-light text-blue-400`}
+                className={`${merriweather.className} italic font-light text-blue-500`}
               >
-                Elevating
+                Building
               </span>{" "}
-              Enterprise Standards Since 2005.
+              Trust and Growth, Commission by Commission.
             </h3>
             <ul className="list-none space-y-4 pl-0">
               {bulletPoints.map((item, index) => (
@@ -123,19 +126,23 @@ export default function WhoWeAreSection() {
           <div className="flex flex-col gap-8 pt-4">
             <motion.div
               whileHover={cardHover}
-              className="relative bg-white border border-gray-100 rounded-lg shadow-md p-6 lg:p-8 cursor-pointer hover:border-blue-300 transition duration-200"
+              className="relative bg-white border border-gray-100 rounded-lg shadow-md p-6 lg:p-8 cursor-pointer hover:border-blue-400 transition duration-200"
             >
               <IoSyncOutline className="absolute top-5 right-5 w-8 h-8 text-blue-500/10" />
-              <h4 className="text-xl font-bold text-blue-400 mb-3">Mission</h4> 
+              <h4 className="text-xl font-bold text-blue-600 mb-3">
+                Our Mission: Trust and Precision
+              </h4>
               <p className="text-sm leading-relaxed text-gray-600">{mission}</p>
             </motion.div>
             <motion.div
               whileHover={cardHover}
-              className="relative bg-white border border-gray-100 rounded-lg shadow-md p-6 lg:p-8 cursor-pointer hover:border-cyan-300 transition duration-200"
+              className="relative bg-white border border-gray-100 rounded-lg shadow-md p-6 lg:p-8 cursor-pointer hover:border-cyan-400 transition duration-200"
             >
-              <IoDiamondOutline className="absolute top-5 right-5 w-8 h-8 text-cyan-500/10" />
-              <h4 className="text-xl font-bold text-cyan-700 mb-3">Vision</h4> 
-              <p className="text-sm leading-relaxed text-gray-600">{vision}</p> 
+              <IoDiamondOutline className="absolute top-5 right-5 w-8 h-8 text-cyan-600/10" />
+              <h4 className="text-xl font-bold text-cyan-700 mb-3">
+                Our Vision: Industry Standard
+              </h4>
+              <p className="text-sm leading-relaxed text-gray-600">{vision}</p>
             </motion.div>
           </div>
         </motion.div>

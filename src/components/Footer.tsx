@@ -80,7 +80,9 @@ const Footer: React.FC = () => {
           <div className="space-y-3">
             <img src="/teknoro.png" alt="Teknoro" className="h-30" />
             <p className="text-gray-400 text-xs max-w-[300px]">
-              Robust and scalable FinTech and enterprise technology solutions.
+              Robust and highly scalable technology solutions designed
+              exclusively for the Multi-Level Marketing (MLM) and direct selling
+              industry.
             </p>
             {/* <div className="flex space-x-3 pt-1">
               {[
