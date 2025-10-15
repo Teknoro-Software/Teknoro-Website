@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Technodrome Solutions",
-  description: "Technodrome Solutions Private Limited",
+  title: "Teknoro Software",
+  description: "Teknoro Software Solutions Private Limited",
   icons: {
     icon: [
-      { url: "/technodromeTlogo.png", sizes: "16x16", type: "image/png" },
-      { url: "/technodromeTlogo.png", sizes: "32x32", type: "image/png" },
-      { url: "/technodromeTlogo.png", sizes: "48x48", type: "image/png" },
-      { url: "/technodromeTlogo.png", sizes: "64x64", type: "image/png" }, // sharper on retina
-      { url: "/technodromeTlogo.svg", type: "image/svg+xml" }, // vector fallback
+      { url: "/teknoro-2.png", sizes: "16x16", type: "image/png" },
+      { url: "/teknoro-2.png", sizes: "32x32", type: "image/png" },
+      { url: "/teknoro-2.png", sizes: "48x48", type: "image/png" },
+      { url: "/teknoro-2.png", sizes: "64x64", type: "image/png" }, // sharper on retina
+      { url: "/teknoro-2.svg", type: "image/svg+xml" }, // vector fallback
     ],
   },
 };
@@ -33,7 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
