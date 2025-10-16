@@ -122,7 +122,7 @@ export default function Home() {
               y1={node.y}
               x2={target.x}
               y2={target.y}
-              stroke="rgba(0, 255, 255, 0.1)"
+              stroke="rgba(0, 255, 255, 0.23)"
               strokeWidth="0.5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -130,7 +130,6 @@ export default function Home() {
             />
           ));
         })}
-
         {nodes.map((node, i) => (
           <motion.circle
             key={i}
@@ -171,11 +170,11 @@ bg-[#0D1117] text-white px-4 sm:px-6 lg:px-8 overflow-hidden font-inter`}
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
+          animate={{ opacity: 0.5 }}
           transition={{ duration: 2 }}
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at bottom, rgba(30, 41, 59, 0.2) 0%, transparent 80%), linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)",
+              "radial-gradient(ellipse at bottom, rgba(30, 41, 59, 0.2) 0%, transparent 80%), repeating-linear-gradient(45deg, #1e293b 0, #1e293b 1px, transparent 1px, transparent 20px), repeating-linear-gradient(135deg, #1e293b 0, #1e293b 1px, transparent 1px, transparent 20px)",
             backgroundSize: "200% 200%, 40px 40px, 40px 40px",
             backgroundPosition: isInView
               ? "50% 50%, 0 0, 0 0"
@@ -183,9 +182,7 @@ bg-[#0D1117] text-white px-4 sm:px-6 lg:px-8 overflow-hidden font-inter`}
             filter: "brightness(0.8) contrast(1.2)",
           }}
         />
-
         {renderNetwork()}
-
         <div className="relative z-20 w-full max-w-6xl text-center space-y-10 pt-28">
           <motion.h1
             className="text-5xl sm:text-6xl md:text-8xl font-black leading-none tracking-tighter"

@@ -20,8 +20,8 @@ export const metadata: Metadata = {
       { url: "/teknoro-2.png", sizes: "16x16", type: "image/png" },
       { url: "/teknoro-2.png", sizes: "32x32", type: "image/png" },
       { url: "/teknoro-2.png", sizes: "48x48", type: "image/png" },
-      { url: "/teknoro-2.png", sizes: "64x64", type: "image/png" }, // sharper on retina
-      { url: "/teknoro-2.svg", type: "image/svg+xml" }, // vector fallback
+      { url: "/teknoro-2.png", sizes: "64x64", type: "image/png" },
+      { url: "/teknoro-2.svg", type: "image/svg+xml" },
     ],
   },
 };
