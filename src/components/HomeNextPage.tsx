@@ -16,10 +16,19 @@ const raleway = Raleway({
   weight: "800",
 });
 
-export default function HomeNextPage() {
-  const [hasScrolled, setHasScrolled] = useState(false);
+type NodePosition = {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  delay: number;
+};
 
-  const heroRef = useRef(null);
+export default function HomeNextPage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [nodes, setNodes] = useState<NodePosition[]>([]);
+
   const isInView = useInView(heroRef, { amount: 0.1, once: false });
 
   const { scrollYProgress } = useScroll({
@@ -49,9 +58,9 @@ export default function HomeNextPage() {
   }, []);
 
   const headline = [
-    "Empowering enterprises with future-ready innovation",
-    "seamless integration, and intelligent computing solutions—",
-    "delivering reliable technology expertise that drives business performance.",
+    "Build your empire with a revolutionary",
+    "network of connections and limitless potential—",
+    "unlocking true financial freedom and time for life.",
   ];
 
   const lineContainer: Variants = {
@@ -78,19 +87,93 @@ export default function HomeNextPage() {
     },
   };
 
+  useEffect(() => {
+    const generateNodes = () => {
+      if (heroRef.current) {
+        const numNodes = 70;
+        const container = heroRef.current.getBoundingClientRect();
+
+        const newNodes: NodePosition[] = Array.from({ length: numNodes }).map(
+          (_, i) => ({
+            id: i,
+            x: Math.random() * container.width * 0.9 + container.width * 0.05,
+            y: Math.random() * container.height * 0.8 + container.height * 0.1,
+            size: Math.random() * 3 + 1,
+            delay: Math.random() * 2,
+          })
+        );
+        setNodes(newNodes);
+      }
+    };
+
+    generateNodes();
+    window.addEventListener("resize", generateNodes);
+    return () => window.removeEventListener("resize", generateNodes);
+  }, []);
+
+  const renderNetwork = () => {
+    if (nodes.length === 0) return null;
+
+    return (
+      <svg className="absolute inset-0 w-full h-full opacity-50 z-[1] pointer-events-none">
+        {nodes.map((node, i) => {
+          const closest = nodes
+            .filter((n) => n.id !== node.id)
+            .sort((a, b) => {
+              const distA = Math.hypot(node.x - a.x, node.y - a.y);
+              const distB = Math.hypot(node.x - b.x, node.y - b.y);
+              return distA - distB;
+            })
+            .slice(0, 2);
+
+          return closest.map((target, j) => (
+            <motion.line
+              key={`${i}-${j}`}
+              x1={node.x}
+              y1={node.y}
+              x2={target.x}
+              y2={target.y}
+              stroke="rgba(0, 255, 255, 0.23)"
+              strokeWidth="0.5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: node.delay + 0.5 }}
+            />
+          ));
+        })}
+
+        {nodes.map((node, i) => (
+          <motion.circle
+            key={i}
+            cx={node.x}
+            cy={node.y}
+            r={node.size / 2}
+            fill="rgb(0, 255, 255)"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scale: [0.5, 1.2, 0.5],
+              fill: isInView ? "rgb(0, 255, 255)" : "rgba(30, 41, 59, 0.5)",
+            }}
+            transition={{
+              duration: 4 + Math.random() * 3,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+              delay: node.delay,
+            }}
+          />
+        ))}
+      </svg>
+    );
+  };
+
   return (
     <section
       ref={heroRef}
-      className="
-        relative
-        h-[150vh] min-h-[900px] // Made section taller to enable parallax scroll
-        px-6 sm:px-8 md:px-10 lg:px-16 xl:px-24
-        flex flex-col 
-        justify-start // Align content at the top
-        overflow-hidden
-        text-white // Default text color is white for dark theme
-      "
+      className=" relative h-[100vh] min-h-[700px] px-6 sm:px-8 md:px-10 lg:px-16 xl:px-24 flex flex-col justify-start overflow-hidden text-white "
     >
+      {" "}
       <motion.div
         className="absolute inset-0 -z-10"
         style={{
@@ -99,18 +182,17 @@ export default function HomeNextPage() {
           backgroundPosition,
         }}
       />
-
+      {renderNetwork()}
       <motion.div
         className="sticky top-0 w-full max-w-7xl flex flex-col justify-center h-screen mx-auto pointer-events-none"
         style={{ y: headlineY, opacity: headlineOpacity }}
       >
         <h1
           className={`${raleway.className} 
-            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
-            flex flex-col leading-tight tracking-tighter
-            text-center
-            px-2 sm:px-0
-          `}
+      text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl flex flex-col leading-tight tracking-tighter
+      text-center
+      px-2 sm:px-0
+     `}
         >
           {headline.map((line, i) => (
             <motion.div
@@ -119,7 +201,7 @@ export default function HomeNextPage() {
               variants={lineContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ amount: 0.8 }}
             >
               {line.split(" ").map((word, wIndex) => (
                 <span key={wIndex} className="mr-4 sm:mr-6 my-2">
@@ -127,11 +209,11 @@ export default function HomeNextPage() {
                     <motion.span
                       key={cIndex}
                       className="inline-block relative 
-                        // Highlighting key words with gradient
-                        text-transparent bg-clip-text
-                        bg-gradient-to-br from-gray-200 via-gray-50 to-cyan-200
-                        hover:from-cyan-300 hover:to-white transition-colors duration-500
-                      "
+            // Highlighting key words with gradient
+            text-transparent bg-clip-text
+            bg-gradient-to-br from-gray-200 via-gray-50 to-cyan-200
+            hover:from-cyan-300 hover:to-white transition-colors duration-500
+           "
                       variants={charVariants}
                     >
                       {char}
@@ -144,33 +226,6 @@ export default function HomeNextPage() {
           ))}
         </h1>
       </motion.div>
-
-      {/* 3. Fixed Scroll-down Icon - Animated Pulse and Fade */}
-      {/* <motion.a
-        href="#next-section" // Link to the next section ID
-        className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-      >
-        <motion.div
-          animate={{
-            y: [0, -8, 0], // Gentle bounce
-            opacity: [1, 0.5, 1], // Subtle pulse
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <FiArrowDownCircle
-            className="text-cyan-400 hover:text-cyan-300 transition-colors"
-            style={{
-              fontSize: "3.5rem",
-              filter: "drop-shadow(0 0 12px rgba(0, 255, 255, 0.4))", // Stronger glow
-            }}
-          />
-        </motion.div>
-      </motion.a> */}
-
-      {/* Filler div to push scroll to the next section */}
     </section>
   );
 }

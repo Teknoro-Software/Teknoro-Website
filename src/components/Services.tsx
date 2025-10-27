@@ -49,27 +49,27 @@ const services: Service[] = [
     icon: FaMobileAlt,
     accentColor: "text-purple-400",
   },
-  {
-    title: "Cloud Integrations (IaaS/PaaS)",
-    description:
-      "Expert setup and maintenance of secure Cloud Infrastructure for Banks and Financial Institutions, covering IaaS, PaaS, and SaaS environments.",
-    icon: FaCloud,
-    accentColor: "text-indigo-400",
-  },
-  {
-    title: "Event Streaming Solutions",
-    description:
-      "Specializing in technologies like Apache Kafka and Oracle Streaming to build scalable, event-driven systems with real-time analytics.",
-    icon: FaStream,
-    accentColor: "text-yellow-400",
-  },
-  {
-    title: "Observability & Analytics",
-    description:
-      "Actionable insights, real-time monitoring, and log analysis powered by Oracle Analytics and the ELK Stack for system health.",
-    icon: FaChartLine,
-    accentColor: "text-pink-400",
-  },
+  // {
+  //   title: "Cloud Integrations (IaaS/PaaS)",
+  //   description:
+  //     "Expert setup and maintenance of secure Cloud Infrastructure for Banks and Financial Institutions, covering IaaS, PaaS, and SaaS environments.",
+  //   icon: FaCloud,
+  //   accentColor: "text-indigo-400",
+  // },
+  // {
+  //   title: "Event Streaming Solutions",
+  //   description:
+  //     "Specializing in technologies like Apache Kafka and Oracle Streaming to build scalable, event-driven systems with real-time analytics.",
+  //   icon: FaStream,
+  //   accentColor: "text-yellow-400",
+  // },
+  // {
+  //   title: "Observability & Analytics",
+  //   description:
+  //     "Actionable insights, real-time monitoring, and log analysis powered by Oracle Analytics and the ELK Stack for system health.",
+  //   icon: FaChartLine,
+  //   accentColor: "text-pink-400",
+  // },
 ];
 
 const containerVariants: Variants = {
@@ -106,7 +106,7 @@ const tileHover: TargetAndTransition = {
 
 export default function Services() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { amount: 0.1, once: true });
+  const isInView = useInView(containerRef, { amount: 0.1, once: false });
 
   return (
     <section
@@ -168,14 +168,14 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                <div className="text-blue-400 font-semibold flex items-center transition-colors hover:text-blue-300">
+                {/* <div className="text-blue-400 font-semibold flex items-center transition-colors hover:text-blue-300">
                   Discover More
                   <FaLaptopCode
                     size={16}
                     className="ml-2"
                     style={{ transform: "rotate(-45deg)" }}
                   />
-                </div>
+                </div> */}
               </motion.div>
             );
           })}

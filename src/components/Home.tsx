@@ -3,7 +3,6 @@
 import { motion, Variants } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
-import { LuChevronsDown } from "react-icons/lu";
 import Link from "next/link";
 
 type NodePosition = {
@@ -73,9 +72,8 @@ export default function Home() {
 
   const [nodes, setNodes] = useState<NodePosition[]>([]);
 
-  const title = "Innovate. Integrate. Compute.";
+  const title = "Connect. Market. Network.";
   const titleWords = title.split(" ");
-
   useEffect(() => {
     const generateNodes = () => {
       if (heroRef.current) {
@@ -130,6 +128,7 @@ export default function Home() {
             />
           ));
         })}
+
         {nodes.map((node, i) => (
           <motion.circle
             key={i}
@@ -162,6 +161,7 @@ export default function Home() {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
       />
+
       <section
         ref={heroRef}
         className={`relative min-h-screen flex flex-col items-center justify-center 
@@ -198,7 +198,7 @@ bg-[#0D1117] text-white px-4 sm:px-6 lg:px-8 overflow-hidden font-inter`}
                 <motion.span
                   variants={titleWordVariants}
                   className={
-                    word === "Compute."
+                    word === "Network."
                       ? "bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 drop-shadow-[0_0_15px_rgba(0,255,255,0.7)]"
                       : "text-white"
                   }
@@ -209,6 +209,7 @@ bg-[#0D1117] text-white px-4 sm:px-6 lg:px-8 overflow-hidden font-inter`}
               </span>
             ))}
           </motion.h1>
+
           <motion.p
             variants={textRevealVariants}
             initial="hidden"
@@ -222,6 +223,7 @@ bg-[#0D1117] text-white px-4 sm:px-6 lg:px-8 overflow-hidden font-inter`}
             partnerships with our clients, translating complex challenges into
             clear, custom-built, and scalable technology solutions.
           </motion.p>
+
           <Link href="#services" passHref>
             <motion.button
               variants={buttonVariants}
@@ -237,6 +239,7 @@ bg-[#0D1117] text-white px-4 sm:px-6 lg:px-8 overflow-hidden font-inter`}
 shadow-lg shadow-cyan-600/50 transition-all duration-300 relative overflow-hidden group"
             >
               <span className="relative z-10">Explore Our Services</span>
+
               <span
                 className="absolute inset-0 bg-white opacity-20 transform 
 scale-x-0 group-hover:scale-x-100 transition-transform 

@@ -44,7 +44,7 @@ export default function About() {
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       className={`relative bg-gray-950 py-20 sm:py-28 overflow-hidden ${raleway.className}`}
     >
       <div

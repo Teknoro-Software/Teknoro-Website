@@ -13,7 +13,7 @@ import {
   Zap,
   Wrench,
   Grid,
-} from "lucide-react"; // Imported Grid icon
+} from "lucide-react";
 import { useInView } from "framer-motion";
 
 const raleway = Raleway({
@@ -27,10 +27,8 @@ type TechImage = {
   category: string;
 };
 
-// --- CONSTANT FOR ALL VIEW ---
 const ALL_CATEGORIES = "All Technologies";
 
-// --- DATA REMAINS THE SAME ---
 const techStackFlat: TechImage[] = [
   { src: "/techStack/react.png", name: "React.js", category: "Frontend" },
   { src: "/techStack/next.png", name: "Next.js", category: "Frontend" },
@@ -64,13 +62,11 @@ const techStackFlat: TechImage[] = [
 const categoryMap: {
   [key: string]: { color: string; icon: React.ElementType; hover: string };
 } = {
-  // NEW ENTRY FOR 'SHOW ALL'
   [ALL_CATEGORIES]: {
     color: "text-blue-400",
     icon: Grid,
     hover: "hover:border-blue-500",
   },
-
   Frontend: {
     color: "text-red-400",
     icon: Code,
@@ -108,55 +104,68 @@ const categoryMap: {
   },
 };
 
-// MODIFIED: 'All Technologies' is now the first item
 const categoryList = [
   ALL_CATEGORIES,
   ...Object.keys(categoryMap).filter((key) => key !== ALL_CATEGORIES),
 ];
 
-// --- ANIMATION VARIANTS (remain the same) ---
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.1,
+      staggerChildren: 0.08,
+      delayChildren: 0.15,
     },
   },
 };
 
 const tileVariants: Variants = {
-  hidden: { opacity: 0, y: 20, scale: 0.85 },
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.7,
+    rotate: -20,
+    filter: "blur(8px)",
+  },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
+    rotate: 0,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.4,
+      duration: 0.6,
       ease: "easeOut",
     },
   },
+  exit: {
+    opacity: 0,
+    y: -30,
+    scale: 0.8,
+    rotate: 20,
+    filter: "blur(8px)",
+    transition: {
+      duration: 0.4,
+      ease: "easeIn",
+    },
+  },
 };
-// --- END ANIMATION VARIANTS ---
 
 export default function TechnologyStackRedesign() {
-  // Start with 'All Technologies' active
   const [activeCategory, setActiveCategory] = useState(ALL_CATEGORIES);
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { amount: 0.1, once: true });
+  const isInView = useInView(containerRef, { amount: 0.1, once: false });
 
   const filteredTech = useMemo(() => {
-    // MODIFIED FILTERING LOGIC
     if (activeCategory === ALL_CATEGORIES) {
-      return techStackFlat; // Return everything for "Show All"
+      return techStackFlat;
     }
     return techStackFlat.filter((tech) => tech.category === activeCategory);
   }, [activeCategory]);
 
   const { color: activeColor } = categoryMap[activeCategory];
 
-  // MODIFIED LOGIC: Small category logic is only applied if NOT showing ALL
   const isShowingAll = activeCategory === ALL_CATEGORIES;
   const isSmallCategory = !isShowingAll && filteredTech.length < 6;
 
@@ -164,7 +173,6 @@ export default function TechnologyStackRedesign() {
     <section
       className={`relative py-20 sm:py-28 bg-slate-900 overflow-hidden ${raleway.className}`}
     >
-      {/* Subtle Background Pattern */}
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -177,39 +185,36 @@ export default function TechnologyStackRedesign() {
         className="max-w-7xl mx-auto px-6 w-full relative z-10"
         ref={containerRef}
       >
-        {/* === HEADER === */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center mb-16"
         >
           <p className="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-2">
             Our Technology Ecosystem
           </p>
+
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white">
             The <span className="text-blue-400">Spectrum</span>
           </h2>
+
           <div className="text-lg text-gray-400 mt-3 max-w-3xl mx-auto">
             We build modern, high-performance solutions on a foundation of
             interconnected, category-leading technologies.
           </div>
         </motion.div>
-
-        {/* === CATEGORY TABS (including "Show All") === */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 p-2 sm:p-4 bg-slate-800/50 rounded-xl max-w-4xl mx-auto border border-slate-700"
         >
           {categoryList.map((category) => {
             const { icon: Icon, color } = categoryMap[category];
             const isActive = category === activeCategory;
-
-            // Adjust button label for mobile "All Technologies" -> "All"
             const mobileLabel =
               category === ALL_CATEGORIES ? "All" : category.split(" ")[0];
 
@@ -234,27 +239,23 @@ export default function TechnologyStackRedesign() {
             );
           })}
         </motion.div>
-
-        {/* === TECH TILES DISPLAY === */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            animate={isInView ? "visible" : "hidden"}
             exit="hidden"
-            // CONDITIONAL CLASSNAME: Flex centering for small categories, otherwise full grid.
             className={`
-                mt-10 gap-6 justify-items-center
-                ${
-                  isSmallCategory
-                    ? "flex justify-center items-center flex-wrap" // Small Category (< 6 items)
-                    : "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6" // Large Category or ALL
-                }
-            `}
+mt-10 gap-6 justify-items-center
+${
+  isSmallCategory
+    ? "flex justify-center items-center flex-wrap"
+    : "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+}
+`}
           >
             {filteredTech.map((tech) => {
-              // Use the category color from the map, but default to the ALL_CATEGORIES color if showing all
               const techCategoryColor = categoryMap[tech.category].color;
               const hoverEffect = categoryMap[tech.category].hover;
 
@@ -269,9 +270,9 @@ export default function TechnologyStackRedesign() {
                       .replace("-400", "-500")}/40`,
                   }}
                   className={`flex flex-col items-center justify-center p-4 w-full aspect-square max-w-[150px]
-                            bg-slate-800/80 rounded-xl transition duration-300 ease-out border border-slate-700
-                            ${hoverEffect} cursor-pointer
-                          `}
+bg-slate-800/80 rounded-xl transition duration-300 ease-out border border-slate-700
+${hoverEffect} cursor-pointer
+`}
                 >
                   <div className="flex-grow flex items-center justify-center mb-3">
                     <Image
@@ -282,11 +283,12 @@ export default function TechnologyStackRedesign() {
                       className="h-10 w-10 md:h-12 md:w-12 object-contain"
                     />
                   </div>
+
                   <p className="text-sm font-semibold text-gray-200 text-center leading-tight">
                     {tech.name}
                   </p>
+
                   <div
-                    // Use the tech's actual category color here, even in the 'All' view
                     className={`mt-1 text-[10px] font-bold uppercase tracking-wider ${techCategoryColor}`}
                   >
                     {tech.category}

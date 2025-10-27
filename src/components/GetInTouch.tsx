@@ -90,7 +90,7 @@ export default function GetInTouch() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6"
@@ -105,7 +105,7 @@ export default function GetInTouch() {
             initial={{ width: 0 }}
             whileInView={{ width: "100px" }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="h-1 bg-[#5AD6FF] rounded-full mb-8 sm:mb-12"
           ></motion.div>
 
@@ -127,7 +127,7 @@ export default function GetInTouch() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <div className="flex items-center mb-4">
                 <div className="bg-slate-950 p-3 rounded-full">
@@ -147,7 +147,7 @@ export default function GetInTouch() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.8 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <div className="flex items-center mb-4">
                 <div className="bg-slate-950 p-3 rounded-full">
@@ -168,7 +168,7 @@ export default function GetInTouch() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="w-full"
         >
           <form className="space-y-4 w-full" onSubmit={handleSubmit}>

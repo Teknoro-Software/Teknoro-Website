@@ -51,9 +51,8 @@ const cardHover: TargetAndTransition = {
 
 export default function WhoWeAreSection() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { amount: 0.2, once: true });
+  const isInView = useInView(containerRef, { amount: 0.2, once: false });
 
-  // --- MLM-FOCUSED CONTENT ---
   const bulletPoints = [
     {
       text: "Flawless Commission Logic",
