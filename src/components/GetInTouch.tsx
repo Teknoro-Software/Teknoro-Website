@@ -230,7 +230,6 @@ export default function GetInTouch() {
               whileTap={{ scale: 0.98 }}
               disabled={loading}
             >
-              {loading ? "Sending..." : "Send Message"}
             </motion.button>
 
             {success && (
