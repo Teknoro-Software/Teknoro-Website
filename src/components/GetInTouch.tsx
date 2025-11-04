@@ -34,7 +34,7 @@ export default function GetInTouch() {
 
   // Replace with your Google Apps Script Web App URL
   const SCRIPT_URL: string =
-    "https://script.google.com/macros/s/AKfycbwiNm1C4Lw0bYM11vrNkpPNn2QwmPkXVABAjx1c28QUlmK8J2L30vv1Uc1Sj710EECw/exec";
+    "https://script.google.com/macros/s/AKfycby1u06dR8CavQn0RJ73-kwnllJhKzPNpJHK2bvEX4CB3SOxaeVD-vo7ky4XiVGnffnC/exec";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -229,7 +229,7 @@ export default function GetInTouch() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               disabled={loading}
-            >
+            ><span>Send Messsage</span>
             </motion.button>
 
             {success && (

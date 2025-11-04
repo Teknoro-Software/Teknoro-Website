@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { name, email, mobile, message } = req.body; 
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiNm1C4Lw0bYM11vrNkpPNn2QwmPkXVABAjx1c28QUlmK8J2L30vv1Uc1Sj710EECw/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1u06dR8CavQn0RJ73-kwnllJhKzPNpJHK2bvEX4CB3SOxaeVD-vo7ky4XiVGnffnC/exec";
 
     const response = await fetch(SCRIPT_URL, {
       method: "POST",

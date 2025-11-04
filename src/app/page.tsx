@@ -14,6 +14,7 @@ import IndustriesWeServe from "@/components/IndustriesWeServe";
 import Navbar from "@/components/Navbar";
 import Partners from "@/components/Partners";
 import Portfolio from "@/components/Portfolio";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Services from "@/components/Services";
 import TechnologyStack from "@/components/TechnologyStack";
 import WhoSection from "@/components/Who";
