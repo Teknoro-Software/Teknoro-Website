@@ -59,7 +59,7 @@ export default function HomeNextPage() {
 
   const headline = [
     "Build your empire with a revolutionary",
-    "network of connections and limitless potential—",
+    "network of connections and limitless potential - ",
     "unlocking true financial freedom and time for life.",
   ];
 

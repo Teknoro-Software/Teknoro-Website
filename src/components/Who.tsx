@@ -116,7 +116,7 @@ export default function WhoWeAreSection() {
                     <strong className="font-bold text-slate-800">
                       {item.text}
                     </strong>{" "}
-                    — {item.sub}
+                    - {item.sub}
                   </span>
                 </motion.li>
               ))}
