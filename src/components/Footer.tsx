@@ -187,9 +187,7 @@ const Footer: React.FC = () => {
 
                 <div>
                   <p>
-                    Welcome to Teknoro Software Solutions Pvt Ltd (“Company”, “we”, “our”, “us”).
-                    By accessing our website or engaging our services, you agree to be bound by
-                    the following Terms & Conditions.
+                    Welcome to Teknoro Software Solutions Pvt Ltd (“Company”, “we”, “our”, “us”). By accessing our website or engaging our services, you agree to be bound by the following Terms & Conditions.
                   </p>
 
                   <p className="mt-3">
@@ -203,10 +201,7 @@ const Footer: React.FC = () => {
                     1. Services
                   </h3>
                   <p>
-                    Teknoro Software Solutions Pvt Ltd provides software development,
-                    web and mobile application development, IT consulting, digital solutions,
-                    maintenance services, and other related technology services as agreed
-                    with the client in writing.
+                    Teknoro Software Solutions Pvt Ltd provides software development, web and mobile application development, IT consulting, digital solutions, maintenance services, and other related technology services as agreed with the client in writing.
                   </p>
                   <p className="mt-3">
                     All services are delivered based on approved proposals, quotations, or agreements.
@@ -232,6 +227,7 @@ const Footer: React.FC = () => {
                   </p>
 
                   <p className="mt-4 font-semibold text-blue-400">No Refund Policy</p>
+                  <p className="mt-4 font-medium">All payments made to Teknoro Software Solutions Pvt Ltd are strictly non-refundable under any circumstances, including:</p>
 
                   <ul className="list-disc pl-6 space-y-2 mt-3">
                     <li>Project cancellation by the client</li>
@@ -256,7 +252,7 @@ const Footer: React.FC = () => {
                   </ul>
 
                   <p className="mt-4">
-                    The Company will not be responsible for any loss arising due to service
+                    The Company will not be responsible for any loss arising due to
                     suspension caused by delayed payment.
                   </p>
                 </div>
@@ -267,7 +263,7 @@ const Footer: React.FC = () => {
                     4. Project Timeline
                   </h3>
 
-                  <p>All project timelines provided are estimates.</p>
+                  <p>All project timelines provided are estimated timelines.</p>
 
                   <p className="mt-3">Project delivery may be delayed due to:</p>
 
@@ -280,21 +276,45 @@ const Footer: React.FC = () => {
                   </ul>
 
                   <p className="mt-4">
-                    The Company reserves the right to extend the delivery timeline where necessary.
-                    The Company shall not be liable for delays beyond its reasonable control.
+                    The Company reserves the right to extend the delivery timeline where necessary and shall not be liable for delays beyond its reasonable control.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
+                    5. No Partnership / No Revenue Share Policy
+                  </h3>
+
+                  <p>Teknoro Software Solutions Pvt Ltd operates strictly as a service provider.</p>
+
+
+                  <p className="mt-2">
+                    The Company does not undertake projects on partnership terms.
+                  </p>
+
+                  <p className=" mt-2">
+                    The Company does not accept equity, shares, profit-sharing, or revenue-sharing models in place of service fees.
+                  </p>
+
+                  <p className="mt-2">
+                    The Company does not enter into joint ventures or business collaboration arrangements unless formally executed through a separate legally binding agreement signed by authorized directors.
+                  </p>
+
+                  <p className="mt-4">
+                    All projects are executed strictly on a paid service basis.
                   </p>
                 </div>
 
                 {/* 5 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    5. Client Responsibilities
+                    6. Client Responsibilities
                   </h3>
 
                   <p>The client agrees to:</p>
 
                   <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Provide accurate project requirements</li>
+                    <li>Provide accurate and complete project requirements</li>
                     <li>Share necessary content, access, and credentials on time</li>
                     <li>Provide timely feedback and approvals</li>
                     <li>Make payments as agreed</li>
@@ -308,7 +328,7 @@ const Footer: React.FC = () => {
                 {/* 6 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    6. Intellectual Property Rights
+                    7. Intellectual Property Rights
                   </h3>
 
                   <p>
@@ -329,7 +349,7 @@ const Footer: React.FC = () => {
                 {/* 7 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    7. Confidentiality
+                    8. Confidentiality
                   </h3>
 
                   <p>
@@ -341,7 +361,7 @@ const Footer: React.FC = () => {
                 {/* 8 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    8. Limitation of Liability
+                    9. Limitation of Liability
                   </h3>
 
                   <p>Teknoro Software Solutions Pvt Ltd shall not be liable for:</p>
@@ -361,20 +381,20 @@ const Footer: React.FC = () => {
                 {/* 9 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    9. Third-Party Services
+                    10. Third-Party Services
                   </h3>
 
                   <p>
                     Projects involving third-party APIs, payment gateways, hosting providers,
                     or external platforms are subject to the terms of those providers.
-                    The Company is not responsible for third-party service interruptions or policy changes.
+                    The Company is not responsible for third-party service interruptions, pricing changes, or policy updates.
                   </p>
                 </div>
 
                 {/* 10 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    10. Termination
+                    11. Termination
                   </h3>
 
                   <p>The Company reserves the right to terminate services if:</p>
@@ -391,7 +411,7 @@ const Footer: React.FC = () => {
                 {/* 11 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    11. Governing Law
+                    12. Governing Law
                   </h3>
 
                   <p>
@@ -403,7 +423,7 @@ const Footer: React.FC = () => {
                 {/* 12 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    12. Updates to Terms
+                    13. Updates to Terms
                   </h3>
 
                   <p>
