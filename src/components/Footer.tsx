@@ -176,262 +176,298 @@ const Footer: React.FC = () => {
 
 
               <h2 className="text-3xl font-bold mb-2 text-white tracking-wide">
-                Terms & Conditions
+                TERMS & CONDITIONS
               </h2>
 
-              <p className="text-blue-400 font-medium mb-6">
+              <p className="text-blue-400 font-medium">
                 Teknoro Software Solutions Pvt Ltd
+              </p>
+
+              <p className="text-gray-400 text-sm mt-1">
+                (An Indian Company incorporated under the Companies Act, 2013)
+              </p>
+
+              <p className="text-gray-400 text-sm mb-6">
+                Effective Date: [Insert Date]
               </p>
 
               <div className="space-y-8 text-sm leading-relaxed text-gray-300">
 
                 <div>
                   <p>
-                    Welcome to Teknoro Software Solutions Pvt Ltd (“Company”, “we”, “our”, “us”). By accessing our website or engaging our services, you agree to be bound by the following Terms & Conditions.
+                    These Terms & Conditions (“Terms”) constitute a legally binding agreement between
+                    Teknoro Software Solutions Pvt Ltd (“Company”, “We”, “Us”, “Our”) and any person or
+                    entity (“Client”, “User”, “You”) accessing our website or availing our services.
                   </p>
-
                   <p className="mt-3">
-                    If you do not agree with any part of these terms, please do not use our services.
+                    These Terms are governed by the Indian Contract Act, 1872, the Information Technology Act, 2000,
+                    and other applicable laws of India.
+                  </p>
+                  <p className="mt-3">
+                    By engaging our services or accessing our website, you agree to be bound by these Terms.
                   </p>
                 </div>
 
                 {/* 1 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    1. Services
+                    1. Scope of Services
                   </h3>
                   <p>
-                    Teknoro Software Solutions Pvt Ltd provides software development, web and mobile application development, IT consulting, digital solutions, maintenance services, and other related technology services as agreed with the client in writing.
+                    The Company provides software development, web and mobile application development,
+                    IT consulting, digital solutions, maintenance, and related technology services as
+                    agreed through written proposals, quotations, work orders, or agreements.
                   </p>
                   <p className="mt-3">
-                    All services are delivered based on approved proposals, quotations, or agreements.
+                    The scope of services shall be limited strictly to what is expressly agreed in writing.
                   </p>
                 </div>
 
                 {/* 2 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    2. Payment Terms
+                    2. Formation of Contract
                   </h3>
-
-                  <p>
-                    Payments must be made as per the agreed schedule mentioned in the proposal or agreement.
-                  </p>
-
-                  <p className="mt-2">
-                    Work will commence only after receipt of the agreed advance payment.
-                  </p>
-
-                  <p className="mt-2">
-                    Any additional features or modifications outside the approved scope will be charged separately.
-                  </p>
-
-                  <p className="mt-4 font-semibold text-blue-400">No Refund Policy</p>
-                  <p className="mt-4 font-medium">All payments made to Teknoro Software Solutions Pvt Ltd are strictly non-refundable under any circumstances, including:</p>
-
-                  <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Project cancellation by the client</li>
-                    <li>Change of requirements after project initiation</li>
-                    <li>Delay in client response</li>
-                    <li>Dissatisfaction after work has commenced</li>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>The Client approves the proposal/quotation in writing (including email confirmation), and</li>
+                    <li>The agreed advance payment is received by the Company.</li>
                   </ul>
+                  <p className="mt-3">
+                    Electronic records and communications shall be valid and enforceable under the Information Technology Act, 2000.
+                  </p>
                 </div>
 
                 {/* 3 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    3. Delay or Failure in Payment
+                    3. Payment Terms
                   </h3>
 
-                  <p>If the client fails to make payment within the agreed timeline:</p>
+                  <p>3.1 Payments must be made strictly as per the agreed schedule.</p>
+                  <p className="mt-2">3.2 Work shall commence only after receipt of the agreed advance payment.</p>
+                  <p className="mt-2">3.3 Any additional work beyond the approved scope shall be subject to additional charges.</p>
+
+                  <p className="mt-4 font-semibold text-blue-400">3.4 No Refund Policy</p>
+
+                  <p className="mt-2">
+                    All payments made to the Company are strictly non-refundable, including but not limited to:
+                  </p>
 
                   <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Project development will be immediately paused.</li>
-                    <li>Access to services, hosting, servers, or deliverables may be suspended.</li>
-                    <li>Project timeline will automatically extend based on the delay period.</li>
+                    <li>Project cancellation by the Client</li>
+                    <li>Change in requirements after project commencement</li>
+                    <li>Delay caused by the Client</li>
+                    <li>Dissatisfaction after work has begun</li>
                   </ul>
 
-                  <p className="mt-4">
-                    The Company will not be responsible for any loss arising due to
-                    suspension caused by delayed payment.
+                  <p className="mt-3">
+                    These are mutually agreed commercial terms enforceable under the Indian Contract Act, 1872.
                   </p>
                 </div>
 
                 {/* 4 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    4. Project Timeline
+                    4. Delay or Failure in Payment
                   </h3>
 
-                  <p>All project timelines provided are estimated timelines.</p>
-
-                  <p className="mt-3">Project delivery may be delayed due to:</p>
-
-                  <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Change in scope or requirements</li>
-                    <li>Delay in client approvals or feedback</li>
-                    <li>Technical challenges</li>
-                    <li>Third-party service issues</li>
-                    <li>Force majeure events</li>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>The Company shall have the right to immediately suspend or stop services.</li>
+                    <li>Access to deliverables, servers, hosting, or software may be restricted.</li>
+                    <li>Project timelines shall automatically extend proportionate to the delay period.</li>
                   </ul>
 
-                  <p className="mt-4">
-                    The Company reserves the right to extend the delivery timeline where necessary and shall not be liable for delays beyond its reasonable control.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    5. No Partnership / No Revenue Share Policy
-                  </h3>
-
-                  <p>Teknoro Software Solutions Pvt Ltd operates strictly as a service provider.</p>
-
-
-                  <p className="mt-2">
-                    The Company does not undertake projects on partnership terms.
-                  </p>
-
-                  <p className=" mt-2">
-                    The Company does not accept equity, shares, profit-sharing, or revenue-sharing models in place of service fees.
-                  </p>
-
-                  <p className="mt-2">
-                    The Company does not enter into joint ventures or business collaboration arrangements unless formally executed through a separate legally binding agreement signed by authorized directors.
-                  </p>
-
-                  <p className="mt-4">
-                    All projects are executed strictly on a paid service basis.
+                  <p className="mt-3">
+                    The Company shall not be liable for any losses arising due to suspension caused by non-payment.
                   </p>
                 </div>
 
                 {/* 5 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    6. Client Responsibilities
+                    5. Project Timeline
                   </h3>
 
-                  <p>The client agrees to:</p>
+                  <p>
+                    All timelines provided are estimated timelines and not guaranteed deadlines unless expressly agreed in writing.
+                  </p>
+
+                  <p className="mt-3">Project delivery may be delayed due to:</p>
 
                   <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Provide accurate and complete project requirements</li>
-                    <li>Share necessary content, access, and credentials on time</li>
-                    <li>Provide timely feedback and approvals</li>
-                    <li>Make payments as agreed</li>
+                    <li>Change in project scope</li>
+                    <li>Delay in approvals or feedback</li>
+                    <li>Technical limitations</li>
+                    <li>Third-party service dependencies</li>
+                    <li>Force majeure events</li>
                   </ul>
 
-                  <p className="mt-4">
-                    Any delay from the client’s side may result in an extension of the project timeline.
+                  <p className="mt-3">
+                    The Company reserves the right to extend delivery timelines when reasonably required.
                   </p>
                 </div>
 
                 {/* 6 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    7. Intellectual Property Rights
+                    6. No Partnership / No Shareholding / No Revenue Sharing
                   </h3>
 
-                  <p>
-                    Ownership of the final deliverables will be transferred only after full payment is received.
-                  </p>
+                  <p>Teknoro Software Solutions Pvt Ltd operates strictly as a service provider.</p>
+
+                  <ul className="list-disc pl-6 space-y-2 mt-3">
+                    <li>No partnership basis projects.</li>
+                    <li>No equity, shares, profit-sharing, or revenue-sharing arrangements in place of service fees.</li>
+                    <li>No joint venture, agency, employment, or partnership relationship unless executed through a separate written agreement signed by authorized directors.</li>
+                  </ul>
 
                   <p className="mt-3">
-                    Until full payment is made, all codes, designs, concepts, and materials
-                    remain the property of Teknoro Software Solutions Pvt Ltd.
-                  </p>
-
-                  <p className="mt-3">
-                    The Company reserves the right to showcase completed projects in its portfolio
-                    unless otherwise agreed in writing.
+                    Nothing contained herein shall be construed as creating a partnership under the Indian Partnership Act, 1932.
                   </p>
                 </div>
 
                 {/* 7 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    8. Confidentiality
+                    7. Client Obligations
                   </h3>
 
-                  <p>
-                    Both parties agree to maintain confidentiality of any proprietary or sensitive
-                    information shared during the course of the project.
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Provide accurate and complete project requirements</li>
+                    <li>Provide timely approvals and feedback</li>
+                    <li>Share necessary credentials and content</li>
+                    <li>Make payments as agreed</li>
+                  </ul>
+
+                  <p className="mt-3">
+                    Failure to comply may result in project delays or additional charges.
                   </p>
                 </div>
 
                 {/* 8 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    9. Limitation of Liability
+                    8. Intellectual Property Rights
                   </h3>
 
-                  <p>Teknoro Software Solutions Pvt Ltd shall not be liable for:</p>
+                  <p>
+                    Ownership of final deliverables shall transfer only after full payment is received.
+                  </p>
 
-                  <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Indirect or consequential damages</li>
-                    <li>Loss of revenue or business</li>
-                    <li>Data loss caused by third-party services</li>
-                    <li>Downtime caused by hosting providers or external integrations</li>
-                  </ul>
+                  <p className="mt-3">
+                    Until full payment is made, all source codes, designs, frameworks, and documentation remain the exclusive property of the Company.
+                  </p>
 
-                  <p className="mt-4">
-                    Total liability shall not exceed the total amount paid for the specific project.
+                  <p className="mt-3">
+                    The Company retains rights to reuse general knowledge, experience, and non-confidential components.
                   </p>
                 </div>
 
                 {/* 9 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    10. Third-Party Services
+                    9. Confidentiality
                   </h3>
-
                   <p>
-                    Projects involving third-party APIs, payment gateways, hosting providers,
-                    or external platforms are subject to the terms of those providers.
-                    The Company is not responsible for third-party service interruptions, pricing changes, or policy updates.
+                    Both parties agree to maintain confidentiality of proprietary information shared during the project.
+                  </p>
+                  <p className="mt-3">
+                    Confidentiality obligations shall survive termination of services.
                   </p>
                 </div>
 
                 {/* 10 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    11. Termination
+                    10. Limitation of Liability
                   </h3>
 
-                  <p>The Company reserves the right to terminate services if:</p>
-
-                  <ul className="list-disc pl-6 space-y-2 mt-3">
-                    <li>Payments are not made as agreed</li>
-                    <li>The client breaches these terms</li>
-                    <li>Misuse of services is detected</li>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>The Company shall not be liable for indirect, incidental, special, or consequential damages.</li>
+                    <li>The Company shall not be liable for loss of profits, data, business opportunity, or goodwill.</li>
+                    <li>Total liability shall not exceed the total fees paid by the Client for the specific project.</li>
                   </ul>
-
-                  <p className="mt-4">No refunds will be issued upon termination.</p>
                 </div>
 
                 {/* 11 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    12. Governing Law
+                    11. Third-Party Services
                   </h3>
-
                   <p>
-                    These Terms shall be governed by the laws of India.
-                    Any disputes shall be subject to the jurisdiction of the appropriate courts in India.
+                    Projects involving third-party APIs, hosting providers, payment gateways, or external platforms are subject to the terms of those providers.
+                  </p>
+                  <p className="mt-3">
+                    The Company shall not be responsible for downtime, pricing changes, policy updates, or failures caused by third parties.
                   </p>
                 </div>
 
                 {/* 12 */}
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
-                    13. Updates to Terms
+                    12. Indemnification
+                  </h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Use or misuse of delivered software</li>
+                    <li>Violation of applicable laws</li>
+                    <li>Content or data provided by the Client</li>
+                  </ul>
+                </div>
+
+                {/* 13 */}
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
+                    13. Termination
+                  </h3>
+
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Payment defaults occur</li>
+                    <li>The Client breaches these Terms</li>
+                    <li>Illegal or unlawful usage of services is detected</li>
+                  </ul>
+
+                  <p className="mt-3">No refunds shall be provided upon termination.</p>
+                </div>
+
+                {/* 14 */}
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
+                    14. Governing Law & Jurisdiction
                   </h3>
 
                   <p>
-                    The Company reserves the right to update these Terms & Conditions at any time
-                    without prior notice. Continued use of our services constitutes acceptance
-                    of the revised terms.
+                    These Terms shall be governed by and construed in accordance with the laws of India.
+                  </p>
+
+                  <p className="mt-3">
+                    Any disputes arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the competent courts at Cochin (Kochi), Kerala, India.
                   </p>
                 </div>
+
+                {/* 15 */}
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
+                    15. Force Majeure
+                  </h3>
+                  <p>
+                    The Company shall not be liable for failure to perform obligations due to events beyond reasonable control,
+                    including but not limited to natural disasters, strikes, government restrictions, cyber incidents, pandemics,
+                    or other force majeure events.
+                  </p>
+                </div>
+
+                {/* 16 */}
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-l-4 border-blue-500 pl-3">
+                    16. Amendments
+                  </h3>
+                  <p>
+                    The Company reserves the right to modify these Terms at any time.
+                    Updated Terms shall become effective upon publication on the website.
+                  </p>
+                </div>
+
+             
 
               </div>
             </div>
